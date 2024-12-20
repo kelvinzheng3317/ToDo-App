@@ -35,12 +35,17 @@ function App() {
     }
     setItems(array);
   }
+  
+  let itemElems = items.map(item => <Item name={item} removeItem={removeItem} />);
 
   return (
     <div>
       <p>Testing</p>
-      <Item id={1} name={"Buy Groceries"} removeItem={removeItem}/>
-      <Item id={2} name={"Take Out Trash"} removeItem={removeItem}/>
+      <div className='itemList'>
+        {itemElems}
+      </div>
+      {/* <Item id={1} name={"Buy Groceries"} removeItem={removeItem}/>
+      <Item id={2} name={"Take Out Trash"} removeItem={removeItem}/> */}
       <Adder addItem={addItem} />
     </div>
   )
