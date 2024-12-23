@@ -28,12 +28,8 @@ function App() {
 
   const removeItem = (item) => {
     console.log("removing " + item); // for debugging
-    let array = items;
-    let index = array.indexOf(item);
-    if (index != -1) {
-      array.splice(index, 1);
-    }
-    setItems(array);
+    const newArray = items.filter(currItem => currItem != item);
+    setItems(newArray);
   }
   
   let itemElems = items.map(item => <Item name={item} removeItem={removeItem} />);
